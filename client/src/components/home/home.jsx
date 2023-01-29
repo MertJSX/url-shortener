@@ -15,10 +15,8 @@ const Home = () => {
         axios.post(`http://${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/api/newurl`, {
           url: url
         }).then((data) => {
-          console.log(data.data);
           setReply(data.data)
           setURL("")
-          console.log(urlReply);
         })
       }}
       >
