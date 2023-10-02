@@ -1,10 +1,9 @@
 const mongoose = require("mongoose")
 const {urlSchema} = require("./schemas")
 
-mongoose.connect('mongodb://localhost:27017/url-shortener');
-mongoose.set('strictQuery', true);
+mongoose.connect('mongodb://127.0.0.1:27017/urlShortener');
 
-var shortURL = mongoose.model('short-urls', urlSchema)
+let shortURL = mongoose.models.shortUrls || mongoose.model('shortUrls', urlSchema)
 
 
 function createURL(url, short) {
